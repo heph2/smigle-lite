@@ -1,0 +1,135 @@
+body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;color:var(--fontcolor); background: var(--bgcolor)}a:link{color: var(--linkcolor)}a:visited{color: var(--visitedcolor)}a:active{color: var(--visitedcolor)}h1,h2,h3{line-height:1.2}
+
+
+#brand {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+#brand a {
+  color: var(--fontcolor);
+  text-decoration: none;
+}
+#brand h1, #brand h3 {
+  margin: 0;
+  margin-left: -10px;
+}
+
+.site-title{
+  margin: 0;
+  margin-left: -13px;
+  font-weight: bolder;
+}
+
+.site-title {
+  font-size: 30px;
+}
+#brand h3 {
+  font-size: 20px;
+  font-weight: normal;
+}
+#brand .icon {
+  width: 75px;
+}
+footer {
+  margin-top: 30px;
+}
+
+h1.title {
+  margin: 0 0 0 0;
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #root {
+    margin-top: 25px;
+  }
+  #brand {
+    flex-direction: row;
+    text-align: unset;
+  }
+  #brand .text {
+    margin-left: 10px;
+  }
+  #brand h1 {
+    font-size: 35px;
+  }
+  #brand h3 {
+    font-size: 25px;
+  }
+  p{
+    text-align: justify;
+  }
+}
+#postsByDate  {
+  list-style: none;
+}
+#postsByDate .date {
+  width: 60px;
+}
+#postsByDate div, #postsInOneGroup div {
+  display: inline-block;
+}
+#terms {
+  list-style: none;
+}
+
+img {
+  min-width: 100%;
+  max-width: 100%;
+  margin-top: 3px;
+  margin-bottom: 3px
+}
+
+article {
+  padding: 15px 0 0 0;
+}
+
+.footnotes hr{
+	border-top: 1px dashed;
+  margin: 15px 10% 15px 10%;
+}
+
+.footnote-ref{
+  text-decoration: none;
+}
+.footnote-ref::before {
+  content: '[';
+}
+
+.footnote-ref::after {
+  content: ']';
+}
+
+.footnotes ol {
+  margin: 0;
+}
+
+.footnotes p{
+  line-height: normal;
+  font: 14px/1.5 monospace;
+  padding: 0;
+  margin: 0;
+}
+
+.post-nav{
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.post-nav-left{  
+  display: inline;
+}
+
+.post-nav-left a{
+  margin-right: 30px;
+}
+.post-nav-right{
+  float:right;
+  text-align: right;
+  display: inline;
+}

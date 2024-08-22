@@ -1,0 +1,42 @@
+{{ define "main" }}
+  <main>
+    <article>
+      <h1 class="title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<h3 class="subtitle">{{ . }}</h3>{{ end }}
+      {{ partial "postMetaDetailed.html" . }}
+      <div class="content">{{ .Content }}</div>
+    </article>
+  </main>
+  
+
+  {{ $pages := where .Site.RegularPages.ByDate "Section" "posts" }}
+
+  <div class="post-nav">
+    <hr/>
+  <div class="post-nav-left">
+{{ with $pages.Next . }}
+
+  <a href="{{ .RelPermalink }}"><-- {{.Title}}</a>
+
+{{ end }}
+</div>
+<div class="post-nav-right">
+  {{ with $pages.Prev . }}
+  <a href="{{ .RelPermalink }}">{{.Title}} --></a>
+{{ end }}
+</div>
+</div>
+  <aside>
+    {{ if .Site.Params.latest.enabled }}
+      {{ $latest := first (default 3 .Site.Params.latest.count) (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Title" "!=" .Title) }}
+        {{if  $latest }}
+          <h3>Latest Posts</h3>
+          <ul>
+            {{ range $latest }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+      {{ end }}
+    {{ end }}
+  </aside>
+{{ end }}

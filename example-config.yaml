@@ -1,0 +1,37 @@
+baseURL: localhost
+languageCode: en-gb
+title: Site Title
+theme: smigle
+
+menu:
+  main: 
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 2
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 3
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 5
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 6
+
+params:
+  abbrDateFmt: "01/02"
+  author: "Blog Author"
+  dateFmt: "06/01/02"
+ 
+  social:
+    - name: "RSS"
+      url: /index.xml
+
