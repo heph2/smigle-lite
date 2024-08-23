@@ -50,11 +50,11 @@ jobs:
         HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
         HUGO_ENVIRONMENT: production
         TZ: America/Los_Angeles
-      run: "cd example-site && hugo --gc --minify --baseURL \"${{ steps.pages.outputs.base_url }}/\" --source . --themesDir ../../ --theme smigle-lite"
+      run: "cd example-site && hugo --gc --minify --baseURL \"${{ steps.pages.outputs.base_url }}/\" --source . --themesDir ../../ --theme smigle-lite -destination ../.public"
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ../.public
+        path: .public
 
   # Deployment job
   deploy:
